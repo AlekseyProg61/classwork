@@ -1,45 +1,63 @@
-# a = int(input('ведите число 1 : '))
-# b = int(input('ведите число 2 : '))
-# if a>b:a,b=b,a
-# while a<=b:
-#         print((a+b)/2)
-#         a+=1
+# numbers = [15,18,23,20,13,11,8,19,17,1,6]
+# a = int(input("Введите число: "))
+# b = 0
+# for i in range(a):
+#     print(numbers[random.randint(0, len(numbers)-1)],end="")
+numbers = [-6, -15, -14, 15, 18, 23, 20, 13, 11, 8, 19, 17, 1, 6, 28]
+b = 0
+summ_negative = 0
+summ_odd = 0
+summ_even = 0
+sum_sum = 0
+work = 1
+min = numbers[0]
+max = numbers[0]
+min_index = 0
+max_index = 0
+mult = 1
+# for i in numbers:
+#     if i % 2 == 0:
+#         summ_negative += i
+#         print(i)
+#     else:
+#         summ_even += i
+#         print(i)
+#     if i < 0: summ_negative += i
+#     print(i)
+# for i in range(0,len(numbers),3):
+#     i*=work
+#     print(i)
+# for i in range(0, len(numbers)):
+#     if min < numbers[i]:
+#         min = numbers[i]
+#         min_index = i
+#         print(numbers[i])
+#     if max < numbers[i]:
+#         max = numbers[i]
+#         max_index = i
+#     for j in range(min_index, max_index):
+#         mult *= numbers[j]
+#         print("Произведение ", mult)
 
-# n = int(input("Введите количество повторений:  "))
-# x = 0
-# while n > 0:
-#         a = int(input("Введите число: "))
-#         if a == 3:
-#                 n-=1
-#                 print(a)
-#                 x += 1
-#         else:
-#                 print(x)
-
-# n = int(input("Введите количество чисел:  "))
-# x = 0
+# for i in range(0, len(numbers) - 1):
+#     if min > numbers[i]:
+#         min = numbers[i]
+#         min_index = i
+#     if max < numbers[i]:
+#         max = numbers[i]
+#         max_index = i
 #
-# while n > 0:
-#         a = int(input("Введите число: "))
-#         print(a+a)
-#         n-=1
-
-
-# n = int(input("Введите количество чисел:  "))
-# x = 0
-#
-# while n > 0:
-#         a = int(input("Введите число: "))
-#         if x >= a:
-#                 x = a
-#                 print(x)
-#         n-=1
-# else:
-#         print(a)
-
-n = int(input("Число: "))
-x = 0
-while n != x:
-        if n >= x:
-           print("*",end="")
-        n-=1
+# if min_index > max_index: min_index, max_index = max_index, min_index
+first_index = 0
+last_index = 0
+for i in range(0,len(numbers)-1):
+    if first_index > 0:
+        first_index = numbers[i]
+        break
+    for j in range(len(numbers),0,-1,):
+        if last_index > 0:
+            last_index = numbers[j]
+        if first_index>last_index: last_index,first_index = first_index,last_index
+        for q in range(first_index,last_index):
+            first_index+=q
+            print(q)
